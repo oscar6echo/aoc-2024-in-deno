@@ -2,7 +2,7 @@ import { assert } from "@std/assert/assert";
 import * as fs from "@std/fs";
 import * as path from "@std/path";
 
-const load_tvs_file = (filename: string) => {
+const read_txt_file = (filename: string) => {
   /** */
 
   const here = import.meta.dirname || ".";
@@ -13,4 +13,4 @@ const load_tvs_file = (filename: string) => {
   return txt;
 };
 
-export default { load_tvs_file };
+export default { read_txt_file };

@@ -3,7 +3,7 @@ import u from "./shared/util.ts";
 
 console.log("START 1");
 
-const txt = u.load_tvs_file("1.txt");
+const txt = u.read_txt_file("1.txt");
 
 const input = d3.csvParseRows(txt, (e: string[]) => {
   const x = e[0].split(" ").filter((e) => !!e).map((e) => parseInt(e));

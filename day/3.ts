@@ -3,7 +3,7 @@ import u from "./shared/util.ts";
 
 console.log("START 3");
 
-const txt = u.load_tvs_file("3.txt");
+const txt = u.read_txt_file("3.txt");
 console.log({ txt });
 
 /////////////////// test-1
