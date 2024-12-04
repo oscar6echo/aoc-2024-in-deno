@@ -5,6 +5,7 @@
     "jsr:@std/fs@^1.0.6": "1.0.6",
     "jsr:@std/internal@^1.0.5": "1.0.5",
     "jsr:@std/path@^1.0.8": "1.0.8",
+    "jsr:@std/regexp@1": "1.0.0",
     "npm:d3@^7.9.0": "7.9.0_d3-selection@3.0.0"
   },
   "jsr": {
@@ -25,6 +26,9 @@
     },
     "@std/path@1.0.8": {
       "integrity": "548fa456bb6a04d3c1a1e7477986b6cffbce95102d0bb447c67c4ee70e0364be"
+    },
+    "@std/regexp@1.0.0": {
+      "integrity": "158628d134c49a0858afe05017c4666f5f73d3a56602c346549ca42f3fab244a"
     }
   },
   "npm": {
@@ -263,6 +267,7 @@
       "jsr:@std/assert@1",
       "jsr:@std/fs@^1.0.6",
       "jsr:@std/path@^1.0.8",
+      "jsr:@std/regexp@1",
       "npm:d3@^7.9.0"
     ]
   }

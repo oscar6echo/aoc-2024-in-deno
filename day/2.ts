@@ -1,7 +1,7 @@
 import d3 from "./shared/d3.ts";
 import u from "./shared/util.ts";
 
-console.log("START 1");
+console.log("START 2");
 
 const txt = u.load_tvs_file("2.txt");
 
