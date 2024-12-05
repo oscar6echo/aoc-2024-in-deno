@@ -3,7 +3,8 @@
     "day-1": "deno run -R  day/1.ts",
     "day-2": "deno run -R  day/2.ts",
     "day-3": "deno run -R  day/3.ts",
-    "day-4": "deno run -R  day/4.ts"
+    "day-4": "deno run -R  day/4.ts",
+    "day-5": "deno run -R  day/5.ts"
   },
   "imports": {
     "@std/assert": "jsr:@std/assert@1",
