@@ -13,4 +13,10 @@ const read_txt_file = (filename: string) => {
   return txt;
 };
 
-export default { read_txt_file };
+const clone = <T>(obj: T): T => {
+  /** */
+
+  return JSON.parse(JSON.stringify(obj));
+};
+
+export default { read_txt_file, clone };
