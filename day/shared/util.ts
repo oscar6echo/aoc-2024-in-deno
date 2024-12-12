@@ -19,4 +19,9 @@ const clone = <T>(obj: T): T => {
   return JSON.parse(JSON.stringify(obj));
 };
 
-export default { read_txt_file, clone };
+const log = (obj: object) => {
+  /** */
+  console.log(Deno.inspect(obj, { depth: 8, colors: true }));
+};
+
+export default { read_txt_file, clone, log };
