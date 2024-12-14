@@ -215,7 +215,7 @@ const solve_2 = (
   const floor: Floor = { size_x: 101, size_y: 103, area: [] };
   const robots = read_input(txt);
   console.log({ n_robots: robots.length, floor });
-  const max_n_step = 10000;
-  const n_vert_line = 30;
+  const max_n_step = 100000; // large
+  const n_vert_line = 30; // guessing
   const _res = solve_2(robots, floor, max_n_step, n_vert_line);
 }
