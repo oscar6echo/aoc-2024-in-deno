@@ -1,7 +1,7 @@
 import d3 from "./shared/d3.ts";
 import u from "./shared/util.ts";
 
-console.log("START 13");
+console.log("START 14");
 
 type Robot = {
   id: number;
