@@ -116,16 +116,10 @@ const str_pos = (pos: Pos) => `${pos.x}-${pos.y}`;
 
 const get_pos_robot = (floor: Floor) => {
   const _i = floor.area.flat().findIndex((e) => e === "@");
-  //   const factor = v2 ? 2 : 1;
-
-  //   console.log({ floor, flat: floor.area.flat() });
-
   const pos_robot = {
     x: _i % floor.size_x,
     y: Math.floor(_i / floor.size_x),
   };
-
-  //   console.log({ pos_robot, _i });
 
   return pos_robot;
 };
@@ -253,13 +247,9 @@ const move_robot_2 = (floor: Floor, m: string) => {
     const sort_pos_rev_move_dir = (a: Pos, b: Pos) =>
       m === "^" ? d3.ascending(a.y, b.y) : d3.descending(a.y, b.y);
 
-    // console.log("-1-", { boxes_in_range });
-
     // sort by y
     const sorted_boxes = Object.values(boxes_in_range)
       .map((e) => e.pos).sort(sort_pos_move_dir);
-
-    // console.log({ sorted_boxes });
 
     // determine which box moves
     sorted_boxes.forEach((e, i) => {
@@ -275,21 +265,15 @@ const move_robot_2 = (floor: Floor, m: string) => {
       }
     });
 
-    // console.log("-2-", { boxes_in_range });
-
     // extract
     const boxes_to_move = Object.values(boxes_in_range).filter((e) =>
       e.will_move
     ).map((e) => e.pos).sort(sort_pos_rev_move_dir);
 
-    // console.log({ boxes_to_move });
-
     return boxes_to_move;
   };
 
   const pos_robot = get_pos_robot(floor);
-
-  //   console.log({ m, pos_robot });
 
   const _pos_robot = move(pos_robot);
   if (get(_pos_robot) === "#") {
@@ -325,8 +309,7 @@ const move_robot_2 = (floor: Floor, m: string) => {
       // list boxes in range
       const boxes_in_range = [];
       let pos_box = _box;
-      //   console.log("bef", { pos_box, val: get(pos_box) });
-      //   while(["[", "]"].includes(get(pos_box)))
+
       while (get(pos_box) === "[") {
         boxes_in_range.push(pos_box);
         pos_box = move(pos_box);
@@ -334,7 +317,7 @@ const move_robot_2 = (floor: Floor, m: string) => {
           pos_box = move(pos_box);
         }
       }
-      //   console.log("aft", { pos_box, val: get(pos_box) });
+
       if (get(pos_box) === "#") {
         // wall -> nothing moves
       } else if (get(pos_box) === ".") {
@@ -349,8 +332,6 @@ const move_robot_2 = (floor: Floor, m: string) => {
         set(pos_robot, ".");
         // done
       } else {
-        // console.log("unexpected", { m, _pos_robot, _box, val_box: get(_box) });
-        // console.log({ m, pos_box, _box, val_pos_box: get(pos_box) });
         throw Error("UNEXPECTED");
       }
     } else {
