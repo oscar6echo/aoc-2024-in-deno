@@ -6,7 +6,8 @@
     "jsr:@std/internal@^1.0.5": "1.0.5",
     "jsr:@std/path@^1.0.8": "1.0.8",
     "jsr:@std/regexp@1": "1.0.0",
-    "npm:d3@^7.9.0": "7.9.0_d3-selection@3.0.0"
+    "npm:d3@^7.9.0": "7.9.0_d3-selection@3.0.0",
+    "npm:heap-js@^2.5.0": "2.5.0"
   },
   "jsr": {
     "@std/assert@1.0.8": {
@@ -243,6 +244,9 @@
         "robust-predicates"
       ]
     },
+    "heap-js@2.5.0": {
+      "integrity": "sha512-kUGoI3p7u6B41z/dp33G6OaL7J4DRqRYwVmeIlwLClx7yaaAy7hoDExnuejTKtuDwfcatGmddHDEOjf6EyIxtQ=="
+    },
     "iconv-lite@0.6.3": {
       "integrity": "sha512-4fCk79wshMdzMp2rH06qWrJE4iolqLhCUH+OiuIgU++RB0+94NlDL81atO7GX55uUKueo0txHNtvEyI6D7WdMw==",
       "dependencies": [
@@ -268,7 +272,8 @@
       "jsr:@std/fs@^1.0.6",
       "jsr:@std/path@^1.0.8",
       "jsr:@std/regexp@1",
-      "npm:d3@^7.9.0"
+      "npm:d3@^7.9.0",
+      "npm:heap-js@^2.5.0"
     ]
   }
 }

@@ -14,14 +14,17 @@
     "day-12": "deno run -R  day/12.ts",
     "day-13": "deno run -R  day/13.ts",
     "day-14": "deno run -R  day/14.ts",
-    "day-15": "deno run -R  day/15.ts"
+    "day-15": "deno run -R  day/15.ts",
+    "day-16": "deno run -RW  day/16.ts",
+    "trial": "deno run -A tmp/trial.ts"
   },
   "imports": {
     "@std/assert": "jsr:@std/assert@1",
     "@std/fs": "jsr:@std/fs@^1.0.6",
     "@std/path": "jsr:@std/path@^1.0.8",
     "@std/regexp": "jsr:@std/regexp@^1.0.0",
-    "d3": "npm:d3@^7.9.0"
+    "d3": "npm:d3@^7.9.0",
+    "heap-js": "npm:heap-js@^2.5.0"
   },
   "fmt": {
     "exclude": ["./py", "./tmp"]
