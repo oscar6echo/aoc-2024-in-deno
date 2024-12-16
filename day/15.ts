@@ -15,17 +15,7 @@ type Floor = {
   area: string[][];
 };
 
-// type Box = {
-//   pos_left: Pos;
-//   pos_right: Pos;
-//   movable: boolean;
-// };
-
 type BoxStore = {
-  [pos_left: string]: boolean;
-};
-
-type BoxStore2 = {
   [pos_left: string]: {
     neighbors: {
       push: string[];
@@ -210,7 +200,7 @@ const move_robot_2 = (floor: Floor, m: string) => {
     }
   };
 
-  const find_impacted_boxes = (box_pos: Pos, store: BoxStore2) => {
+  const find_impacted_boxes = (box_pos: Pos, store: BoxStore) => {
     const box_key = str_pos(box_pos);
 
     if (!store[box_key]) {
@@ -248,7 +238,7 @@ const move_robot_2 = (floor: Floor, m: string) => {
     }
   };
 
-  const find_boxes_to_move = (boxes_in_range: BoxStore2) => {
+  const find_boxes_to_move = (boxes_in_range: BoxStore) => {
     // fill pushed_by
     Object.entries(boxes_in_range).forEach(([k, v]) => {
       //   console.log({ k, v });
@@ -318,7 +308,7 @@ const move_robot_2 = (floor: Floor, m: string) => {
   if (_box) {
     if (["^", "v"].includes(m)) {
       // list boxes in range
-      const boxes_in_range: BoxStore2 = {};
+      const boxes_in_range: BoxStore = {};
       find_impacted_boxes(_box, boxes_in_range);
       const boxes_to_move = find_boxes_to_move(boxes_in_range);
 
