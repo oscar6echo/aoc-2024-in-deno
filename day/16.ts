@@ -282,15 +282,15 @@ const do_search = (g: Graph, start: string, ends: string[]) => {
   return cache;
 };
 
-const calc_score_1 = (visited: NodeCache, ends: string[]) => {
-  const _ends = Object.values(visited).filter((e) => ends.includes(e.node_id));
+const calc_score_1 = (cache: NodeCache, ends: string[]) => {
+  const _ends = Object.values(cache).filter((e) => ends.includes(e.node_id));
   const score = d3.min(_ends.map((e) => e.total_distance));
   assert(score !== undefined);
   return score;
 };
 
-const calc_score_2 = (visited: NodeCache, ends: string[]) => {
-  const _ends = Object.values(visited).filter((e) => ends.includes(e.node_id));
+const calc_score_2 = (cache: NodeCache, ends: string[]) => {
+  const _ends = Object.values(cache).filter((e) => ends.includes(e.node_id));
   const score = d3.min(_ends.map((e) => e.total_distance));
   assert(score !== undefined);
   const __ends = _ends.filter((e) => e.total_distance === score);
@@ -305,7 +305,7 @@ const calc_score_2 = (visited: NodeCache, ends: string[]) => {
       break;
     }
     nodes_todo.forEach((e) => {
-      visited[e].prev_nodes.forEach((f) => {
+      cache[e].prev_nodes.forEach((f) => {
         nodes_prev.add(f);
       });
       nodes_visited.add(e);
@@ -344,8 +344,8 @@ const solve_1 = (floor: Floor) => {
   const { g, start, ends } = build_graph(floor);
   console.log({ start, ends });
 
-  const visited = do_search(g, start, ends);
-  const score = calc_score_1(visited, ends);
+  const cache = do_search(g, start, ends);
+  const score = calc_score_1(cache, ends);
   return score;
 };
 
@@ -353,9 +353,9 @@ const solve_2 = (floor: Floor, show = true) => {
   const { g, start, ends } = build_graph(floor);
   console.log({ start, ends });
 
-  const visited = do_search(g, start, ends);
+  const cache = do_search(g, start, ends);
 
-  const { n_path_node: score, path } = calc_score_2(visited, ends);
+  const { n_path_node: score, path } = calc_score_2(cache, ends);
 
   if (show) {
     show_floor(floor, path);
