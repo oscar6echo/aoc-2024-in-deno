@@ -19,6 +19,7 @@
     "day-17": "deno run -RW  day/17.ts",
     "day-18": "deno run -RW  day/18.ts",
     "day-19": "deno run -RW  day/19.ts",
+    "day-20": "deno run -RW  day/20.ts",
     "trial": "deno run -A tmp/trial.ts"
   },
   "imports": {
