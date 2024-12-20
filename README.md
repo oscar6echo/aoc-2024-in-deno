@@ -2,4 +2,15 @@
 
 Ref: <https://deno.com/blog/advent-of-code-2024>
 
-Will do a few days.
+## Commands
+
+```sh
+# install packages
+deno install
+
+# list scripts
+deno task
+
+# run a script
+deno run day-[no]
+```
