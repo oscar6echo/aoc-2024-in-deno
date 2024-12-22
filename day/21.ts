@@ -174,7 +174,7 @@ const solve = (txt: string, n_pad: number) => {
   console.log({ score });
 }
 
-////////////////// 1
+////////////////// 2
 
 {
   console.log("=".repeat(50));
