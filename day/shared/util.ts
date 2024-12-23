@@ -1,6 +1,7 @@
 import { assert } from "@std/assert/assert";
 import * as fs from "@std/fs";
 import * as path from "@std/path";
+import d3 from "../shared/d3.ts";
 
 const read_txt_file = (filename: string, folder = "input") => {
   /** */
@@ -24,4 +25,25 @@ const log = (obj: object) => {
   console.log(Deno.inspect(obj, { depth: 8, colors: true }));
 };
 
-export default { read_txt_file, clone, log };
+const build_looper = (n_nest: number, n_iter: number) => {
+  const arr: number[] = [];
+  const res: number[][] = [];
+
+  const looper = (level = 0) => {
+    for (const i of d3.range(n_iter)) {
+      arr.push(i);
+      if (level === n_nest - 1) {
+        res.push(arr.slice());
+        arr.splice(level, 1);
+        continue;
+      }
+
+      looper(level + 1);
+      arr.splice(level, 1);
+    }
+    return res;
+  };
+  return looper;
+};
+
+export default { read_txt_file, clone, log, build_looper };
