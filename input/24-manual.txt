@@ -1,0 +1,35 @@
+
+patterns from 24-sorted.txt
+
+gqp
+mwk
+qgd
+
+z10
+z18
+z33
+
+inspect z24 from solve_2a
+
+XOR kdn cpv -> z22 xor/or
+XOR gwq wrn -> z23 xor/or
+XOR jmh mrs -> z24 and/or
+XOR png gdq -> z26 xor/or
+
+
+try swap jmh with gate from xor + input xy
+cf. solve_2b
+
+find candidates
+
+jmh
+    ttf // no
+    hsw // yes
+
+
+test candidates.
+
+answer:
+gqp,hsw,jmh,mwk,qgd,z10,z18,z33
+
+

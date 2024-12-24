@@ -46,4 +46,27 @@ const build_looper = (n_nest: number, n_iter: number) => {
   return looper;
 };
 
-export default { read_txt_file, clone, log, build_looper };
+const permutations = <T>(arr: T[]) => {
+  const res: T[][] = [];
+  if (arr.length === 0) return [];
+  if (arr.length === 1) return [arr];
+
+  for (let i = 0; i < arr.length; i++) {
+    const e = arr[i];
+
+    const others = arr.slice(0, i).concat(arr.slice(i + 1));
+    const swapped_perm = permutations(others);
+
+    for (let j = 0; j < swapped_perm.length; j++) {
+      const finalSwappedPermutation = [e].concat(
+        swapped_perm[j],
+      );
+
+      res.push(finalSwappedPermutation);
+    }
+  }
+
+  return res;
+};
+
+export default { read_txt_file, clone, log, build_looper, permutations };
